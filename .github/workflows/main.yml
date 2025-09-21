@@ -1,1 +1,22 @@
-Hello Kitty 
+name: CI - Hello World
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Run a one-line script
+      run: echo "Hello, world!"
+
+    - name: Run a multi-line script
+      run: |
+        echo "This is a multi-line script."
+        echo "It can execute multiple commands."
